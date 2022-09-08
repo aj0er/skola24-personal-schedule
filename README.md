@@ -6,4 +6,4 @@ Använder mitt eget ramverk [framework](https://github.com/aj0er/framework).
 
 # Installation
 - Installera dependencies `composer install`  
-- Kör dev-servern `php -S localhost:8080 index.php` alternativt använd [HTAccess](https://github.com/aj0er/framework) för Apache-servrar.
+- Kör dev-servern `php -S localhost:8080 index.php` alternativt använd [HTAccess](https://github.com/aj0er/framework/blob/main/.htaccess-example) för Apache-servrar.
