@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personligt schema</title>
+    <script defer src="/static/schedule.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="info">
+        <h1>Schema</h1>
+        <p id="info"></p>
+        
+        <div id="data-input">
+            <form action="/setup" method="POST">
+                <input type="text" name="domain" placeholder="Domän (t.ex. halmstad.skola24.se)" required>
+                <input type="text" name="signature" placeholder="Personnummer (YYDDMM-XXXX)" required><br>
+
+                <input type="submit" value="Visa schema">
+            </form>
+        </div>
+
+        <div id="weekMode">
+            <input type="checkbox" id="wholeWeek" name="wholeWeek">
+            <label for="wholeWeek">Visa hela veckan</label>
+        </div>
+    </div>
+
+    <div class="svg-container" id="svg-container">
+        <svg id="svg" width="100%" height="100%" viewBox="0 0 1920 1080"></svg>
+    </div>
+
+    <div id="cookie-text">
+        <p><b>Denna sida använder cookies.</b></p>
+        <p>Ditt personnummer sparas som cookie på din dator (ej klartext), inga personnummer sparas på servern.</p>
+    </div>
+</body>
+
+</html>

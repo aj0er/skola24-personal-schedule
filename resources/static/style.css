@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    background-color: rgb(44,44,44);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+div {
+    margin: 0 auto;
+}
+
+h1, p {
+    text-align: center;
+    margin: 0;
+}
+
+#data-input {
+    width: 400px;
+    height: 5rem;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 7rem;
+}
+
+#weekMode {
+    display: none;
+    width: 12rem;
+    margin:0 auto; 
+    margin-top: 20px; 
+    margin-bottom: 2rem;
+}
+
+input[type=text],input[type=submit], select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
+select {
+    margin: 0 auto;
+}
+
+.svg-container {
+    width: 90%;
+}
+
+@media screen and (max-width: 768px){
+    .svg-container {
+        width: 100%;
+    }
+}
+
+#cookie-text {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    font-size: 15px;
+}

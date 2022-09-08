@@ -1,0 +1,26 @@
+{
+    "name": "aj0er/skola24-personal-schedule",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PersonalSchedule\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aj0er",
+            "email": "ajoeaar@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/aj0er/framework"
+        }
+    ],
+    "require": {
+       "aj0er/framework": "dev-main",
+        "guzzlehttp/guzzle": "^7.5" 
+    }
+}
