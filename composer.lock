@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aj0er/framework.git",
-                "reference": "cd96e8bf83a77bf78d3e12a6aabd109e4f309b11"
+                "reference": "9168f1a17e664ea91042fce22c7942d6261d34f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aj0er/framework/zipball/cd96e8bf83a77bf78d3e12a6aabd109e4f309b11",
-                "reference": "cd96e8bf83a77bf78d3e12a6aabd109e4f309b11",
+                "url": "https://api.github.com/repos/aj0er/framework/zipball/9168f1a17e664ea91042fce22c7942d6261d34f9",
+                "reference": "9168f1a17e664ea91042fce22c7942d6261d34f9",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 "source": "https://github.com/aj0er/framework/tree/main",
                 "issues": "https://github.com/aj0er/framework/issues"
             },
-            "time": "2022-09-08T10:10:44+00:00"
+            "time": "2022-09-13T09:43:40+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

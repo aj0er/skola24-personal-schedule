@@ -31,7 +31,7 @@ async function renderSchedule(){
     lastRender = currentTime;
     svgElement.innerHTML = ""; // Rensa tidigare rendering
 
-    let url = "/schedule" + 
+    let url = "schedule" + 
         "?width=" + screen.width +
         "&height=" + screen.height +
         "&wholeWeek=" + wholeWeek;

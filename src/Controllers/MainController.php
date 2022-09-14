@@ -28,11 +28,13 @@ class MainController extends Controller {
             "signature",
             $request->domain . "|" . $signature,
             time()+60*60*24*30,
-            "/",
-            "localhost",
+            "/schema2",
+            "te19adjo.kgwebb.se",
             true,
             true
         );
+
+        return parent::redirect("/schema2");
     }
 
     function getSchedule(GetScheduleRequest $request){
