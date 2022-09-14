@@ -3,7 +3,6 @@
 namespace PersonalSchedule\Controllers;
 
 use Framework\Controller\Controller;
-use Framework\HTTP\HttpRequest;
 use Framework\Util\StatusCode;
 
 use PersonalSchedule\Services\ScheduleService;
@@ -27,7 +26,7 @@ class MainController extends Controller {
         setcookie(
             "signature",
             $request->domain . "|" . $signature,
-            time()+60*60*24*30,
+            time() + 60 * 60 * 24 * 30, // 30 days
             "/schema2",
             "te19adjo.kgwebb.se",
             true,
@@ -47,7 +46,8 @@ class MainController extends Controller {
         $domain = $parts[0];
         $id = $parts[1];
 
-        return $this->scheduleService->getSchedule($domain, $id, $request->width, $request->height, $request->wholeWeek === "true");
+        return $this->scheduleService->getSchedule($domain, $id, $request->width, 
+                                                        $request->height, $request->wholeWeek === "true");
     }
 
 }

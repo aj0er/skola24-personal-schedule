@@ -5,9 +5,16 @@ namespace PersonalSchedule\Services;
 use GuzzleHttp\Client;
 use \DateTimeZone;
 use \DateTime;
+use PersonalSchedule\Util\TimeUtil;
 
 class ScheduleService
 {
+
+    private TimeUtil $timeUtil;
+
+    public function __construct(TimeUtil $timeUtil){
+        $this->timeUtil = $timeUtil;        
+    }
 
     private const HEADERS = [
         'Connection' => 'keep-alive',
@@ -62,7 +69,7 @@ class ScheduleService
         $timezone = new DateTimeZone("Europe/Stockholm");
         $offset   = $timezone->getOffset(new DateTime());
 
-        $ov = ($currentDay ? ($this->getMidnight() - $offset) : 0);
+        $ov = ($currentDay ? ($this->timeUtil->getMidnight() - $offset) : 0);
 
         $lessons = [];
         for ($i = 0; $i < count($info); $i++) {
@@ -79,8 +86,8 @@ class ScheduleService
                 "name" => $lessonName,
                 "teacher" => $this->getArrayOr($texts, "Ingen lärare", 1, $textCount),
                 "room" => $this->getArrayOr($texts, "Inget rum", 2, $textCount),
-                "timeStart" => $ov + $this->convertTimeToMs(($lesson["timeStart"])),
-                "timeEnd" => $ov + $this->convertTimeToMs(($lesson["timeEnd"]))
+                "timeStart" => $ov + $this->timeUtil->convertTimeToMs(($lesson["timeStart"])),
+                "timeEnd" => $ov + $this->timeUtil->convertTimeToMs(($lesson["timeEnd"]))
             ];
 
             array_push($lessons, $item);
@@ -94,19 +101,8 @@ class ScheduleService
         return $lessons;
     }
 
-    function getMidnight()
-    {
-        return strtotime('today midnight UTC');
-    }
-
-    function convertTimeToMs($str)
-    {
-        return strtotime("1970-01-01 $str UTC");
-    }
-
     private function renderSchedule(string $key, string $domain, string $signature, int $width, int $height, bool $wholeWeek)
     {
-
         $weekDay = date("w");
         $body = [
             "renderKey" => $key,
